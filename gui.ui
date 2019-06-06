@@ -488,7 +488,7 @@
           </font>
          </property>
          <property name="text">
-          <string>水印</string>
+          <string>彩印</string>
          </property>
          <attribute name="buttonGroup">
           <string notr="true">buttonGroup_6</string>
@@ -538,11 +538,11 @@
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_2"/>
-  <buttongroup name="buttonGroup_4"/>
-  <buttongroup name="buttonGroup_5"/>
+  <buttongroup name="buttonGroup"/>
   <buttongroup name="buttonGroup_3"/>
+  <buttongroup name="buttonGroup_5"/>
   <buttongroup name="buttonGroup_6"/>
+  <buttongroup name="buttonGroup_4"/>
  </buttongroups>
 </ui>

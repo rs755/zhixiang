@@ -69,10 +69,13 @@ class MyWindow(gui.Ui_MainWindow):
 
         if self.buttonGroup_6.checkedButton() == self.radioButton_16:
             yinshua = '水墨印'
+            dsw += 's'
         elif self.buttonGroup_6.checkedButton() == self.radioButton_17:
-            yinshua = '水印'
+            yinshua = '彩印'
+            dsw += 'c'
         else:
             yinshua = self.lineEdit_6.text()
+            dsw = 'o'
 
 
 def main():

@@ -1,5 +1,5 @@
 houdu = {'bihousw': 10, 'bihoudw': 5, 'yaogaisw': 7, 'yaogaidw': 5, 'dianban': 1, 'neika_geban': 3}  # 厚度
-caizhi = {'sw': '180g/120g/100g/120g/160g', 'dw': 'K230g/H140g/K230g'}  # 材质
+caizhi = {'o': '', 'sws': '180g/120g/100g/120g/160g', 'swc': 'W250g/140g/100/140g/180g', 'dws': 'K230g/H140g/K230g', 'dwc': 'W250g/H140g/K230g'}  # 材质
 neika_geban = {'sw': 15, 'dw': 10}
 
 
