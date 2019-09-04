@@ -1,17 +1,11 @@
 import sys
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtWidgets
 import gui
 from function import *
 
-guanzhijing, guangao, gaigao = 65, 240, 55  # 罐直径
-dsw = 'sw'  # 单瓦或双瓦
-guan_heng_c, guan_shu_c = 6, 4  # 横排罐数，竖排罐数
-neika_heng_c, neika_shu_c, geban_c, dianban_c = 5, 3, 0, 1
-yinshua = '水墨印'
-
 
 class MyWindow(gui.Ui_MainWindow):
-    def __init__(self,Dialog):
+    def __init__(self, Dialog):
         super().setupUi(Dialog)
         self.pushButton.clicked.connect(self.calculate)
         self.buttonGroup.buttonClicked.connect(self.rbclicked)
