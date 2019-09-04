@@ -8,68 +8,70 @@ class MyWindow(gui.Ui_MainWindow):
     def __init__(self, Dialog):
         super().setupUi(Dialog)
         self.pushButton.clicked.connect(self.calculate)
-        self.buttonGroup.buttonClicked.connect(self.rbclicked)
-        self.buttonGroup_2.buttonClicked.connect(self.rbclicked)
-        self.buttonGroup_3.buttonClicked.connect(self.rbclicked)
-        self.buttonGroup_4.buttonClicked.connect(self.rbclicked)
-        self.buttonGroup_5.buttonClicked.connect(self.rbclicked)
-        self.buttonGroup_6.buttonClicked.connect(self.rbclicked)
+        self.buttonGroup_d.buttonClicked.connect(self.rbclicked)
+        self.buttonGroup_guangaigao.buttonClicked.connect(self.rbclicked)
+        self.buttonGroup_dsw.buttonClicked.connect(self.rbclicked)
+        self.buttonGroup_guanpaibu.buttonClicked.connect(self.rbclicked)
+        self.buttonGroup_yinshua.buttonClicked.connect(self.rbclicked)
+        self.buttonGroup_neika_geban.buttonClicked.connect(self.rbclicked)
+        self.buttonGroup_dianban.buttonClicked.connect(self.rbclicked)
 
     def calculate(self):
-        global guangao, gaigao
-        guangao = int(self.lineEdit_4.text())
-        gaigao = int(self.lineEdit_5.text())
-        text = calculator(dsw, guanzhijing, guangao, gaigao, guan_heng_c, guan_shu_c, neika_heng_c, neika_shu_c, geban_c, dianban_c, yinshua)
-        self.textBrowser.setText(text)
+        text = calculator(self.guanzhijing, self.guanzonggao, self.dsw, self.guan_paibu, self.yinshua, self.neika_geban, self.dianban_c)
+        self.plainTextEdit.setText(text)
 
     def rbclicked(self):
-        global guanzhijing, dsw, guan_heng_c, guan_shu_c, neika_heng_c, neika_shu_c, geban_c, dianban_c, yinshua
-        if self.buttonGroup.checkedButton() == self.radioButton_12:
-            guanzhijing = 65
-        elif self.buttonGroup.checkedButton() == self.radioButton_13:
-            guanzhijing = 60
-        elif self.buttonGroup.checkedButton() == self.radioButton_15:
-            guanzhijing = 52
-        else:
-            guanzhijing = int(self.lineEdit_3.text())
+        if self.buttonGroup_d.checkedButton() == self.radioButton_d1:
+            self.guanzhijing = 65
+        elif self.buttonGroup_d.checkedButton() == self.radioButton_d2:
+            self.guanzhijing = 60
+        elif self.buttonGroup_d.checkedButton() == self.radioButton_d3:
+            self.guanzhijing = 52
+        elif self.buttonGroup_d.checkedButton() == self.radioButton_d4:
+            self.guanzhijing = int(self.lineEdit_d4.text())
 
-        if self.buttonGroup_2.checkedButton() == self.radioButton:
-            dsw = 'sw'
-        else:
-            dsw = 'dw'
+        if self.buttonGroup_guangaigao.checkedButton() == self.radioButton_guangaigao:
+            self.guanzonggao = int(self.lineEdit_guangao.text()) + int(self.lineEdit_gaigao.text())
+        elif self.buttonGroup_guangaigao.checkedButton() == self.radioButton_guanzonggao:
+            self.guanzonggao = int(self.lineEdit_guanzonggao.text())
 
-        if self.buttonGroup_3.checkedButton() == self.radioButton_3:
-            guan_heng_c, guan_shu_c = 6, 4
-        elif self.buttonGroup_3.checkedButton() == self.radioButton_4:
-            guan_heng_c, guan_shu_c = 4, 3
-        else:
-            guan_heng_c, guan_shu_c = int(self.lineEdit.text()), int(self.lineEdit_2.text())
+        if self.buttonGroup_dsw.checkedButton() == self.radioButton_shuangwa:
+            self.dsw = 'sw'
+        elif self.buttonGroup_dsw.checkedButton() == self.radioButton_danwa:
+            self.dsw = 'dw'
 
-        if self.buttonGroup_4.checkedButton() == self.radioButton_6:
-            neika_heng_c, neika_shu_c = guan_heng_c-1, guan_shu_c-1
-            geban_c = 0
-        elif self.buttonGroup_4.checkedButton() == self.radioButton_7:
-            geban_c = guan_shu_c-1
-            neika_heng_c, neika_shu_c = 0, 0
-        else:
-            neika_heng_c, neika_shu_c, geban_c = 0, 0, 0
+        if self.buttonGroup_guanpaibu.checkedButton() == self.radioButton_p1:
+            self.guan_paibu = [6, 4]
+        elif self.buttonGroup_guanpaibu.checkedButton() == self.radioButton_p2:
+            self.guan_paibu = [4, 3]
+        elif self.buttonGroup_guanpaibu.checkedButton() == self.radioButton_p3:
+            self.guan_paibu = [6, 5]
+        elif self.buttonGroup_guanpaibu.checkedButton() == self.radioButton_p4:
+            self.guan_paibu = [5, 4]
+        elif self.buttonGroup_guanpaibu.checkedButton() == self.radioButton_p5:
+            self.guan_paibu = [int(self.lineEdit_p5h.text()), int(self.lineEdit_p5s.text())]
 
-        if self.buttonGroup_5.checkedButton() == self.radioButton_9:
-            dianban_c = 1
-        elif self.buttonGroup_5.checkedButton() == self.radioButton_10:
-            dianban_c = 2
-        else:
-            dianban_c = 0
+        if self.buttonGroup_yinshua.checkedButton() == self.radioButton_y1:
+            self.yinshua = '水墨印'
+        elif self.buttonGroup_yinshua.checkedButton() == self.radioButton_y2:
+            self.yinshua = '彩印'
+        elif self.buttonGroup_yinshua.checkedButton() == self.radioButton_y3:
+            self.yinshua = self.lineEdit_y3.text()
 
-        if self.buttonGroup_6.checkedButton() == self.radioButton_16:
-            yinshua = '水墨印'
-            dsw += 's'
-        elif self.buttonGroup_6.checkedButton() == self.radioButton_17:
-            yinshua = '彩印'
-            dsw += 'c'
-        else:
-            yinshua = self.lineEdit_6.text()
-            dsw = 'o'
+        if self.buttonGroup_neika_geban.checkedButton() == self.radioButton_n1:
+            self.neika_geban = 'neika'
+        elif self.buttonGroup_neika_geban.checkedButton() == self.radioButton_n2:
+            self.neika_geban = 'geban'
+        elif self.buttonGroup_neika_geban.checkedButton() == self.radioButton_n3:
+            self.neika_geban = 'no'
+
+        if self.buttonGroup_dianban.checkedButton() == self.radioButton_n4:
+            self.dianban_c = 1
+        elif self.buttonGroup_dianban.checkedButton() == self.radioButton_n5:
+            self.dianban_c = 2
+        elif self.buttonGroup_dianban.checkedButton() == self.radioButton_n6:
+            self.dianban_c = 0
+
 
 
 def main():
