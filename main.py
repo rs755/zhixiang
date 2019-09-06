@@ -1,7 +1,7 @@
 import sys
-from PyQt5 import QtWidgets
+from PyQt5 import QtCore, QtGui, QtWidgets
 import gui
-from function import *
+#from function import *
 
 
 guanzhijing = 65
@@ -26,7 +26,8 @@ class MyWindow(gui.Ui_MainWindow):
         self.buttonGroup_dianban.buttonClicked.connect(self.rbclicked)
 
     def calculate(self):
-        text = calculator(guanzhijing, guanzonggao, dsw, guan_paibu, yinshua, neika_geban, dianban_c)
+        global guanzhijing, guanzonggao, dsw, guan_paibu, yinshua, neika_geban, dianban_c
+        text = "666" #calculator(guanzhijing, guanzonggao, dsw, guan_paibu, yinshua, neika_geban, dianban_c)
         self.plainTextEdit.setText(text)
 
     def rbclicked(self):
