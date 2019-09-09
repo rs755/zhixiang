@@ -1,7 +1,7 @@
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
 import gui
-#from function import *
+from function import *
 
 
 guanzhijing = 65
@@ -27,8 +27,18 @@ class MyWindow(gui.Ui_MainWindow):
 
     def calculate(self):
         global guanzhijing, guanzonggao, dsw, guan_paibu, yinshua, neika_geban, dianban_c
-        text = "666" #calculator(guanzhijing, guanzonggao, dsw, guan_paibu, yinshua, neika_geban, dianban_c)
-        self.plainTextEdit.setText(text)
+        if guanzhijing == 'o':
+            guanzhijing = int(self.lineEdit_d4.text())
+        if guanzonggao == 'o1':
+            guanzonggao = (int(self.lineEdit_guangao.text()) + int(self.lineEdit_gaigao.text()) - 7)
+        if guanzonggao == 'o2':
+            guanzonggao = int(self.lineEdit_guanzonggao.text())
+        if guan_paibu == 'o':
+            guan_paibu = [int(self.lineEdit_p5h.text()), int(self.lineEdit_p5s.text())]
+        if yinshua == 'o':
+            yinshua = self.lineEdit_y3.text()
+        text = calculator(guanzhijing, guanzonggao, dsw, guan_paibu, yinshua, neika_geban, dianban_c)
+        self.plainTextEdit.setPlainText(text)
 
     def rbclicked(self):
         global guanzhijing, guanzonggao, dsw, guan_paibu, yinshua, neika_geban, dianban_c
@@ -39,12 +49,12 @@ class MyWindow(gui.Ui_MainWindow):
         elif self.buttonGroup_d.checkedButton() == self.radioButton_d3:
             guanzhijing = 52
         elif self.buttonGroup_d.checkedButton() == self.radioButton_d4:
-            guanzhijing = int(self.lineEdit_d4.text())
+            guanzhijing = 'o'
 
         if self.buttonGroup_guangaigao.checkedButton() == self.radioButton_guangaigao:
-            guanzonggao = int(self.lineEdit_guangao.text()) + int(self.lineEdit_gaigao.text())
+            guanzonggao = 'o1'
         elif self.buttonGroup_guangaigao.checkedButton() == self.radioButton_guanzonggao:
-            guanzonggao = int(self.lineEdit_guanzonggao.text())
+            guanzonggao = 'o2'
 
         if self.buttonGroup_dsw.checkedButton() == self.radioButton_shuangwa:
             dsw = 'sw'
@@ -60,14 +70,14 @@ class MyWindow(gui.Ui_MainWindow):
         elif self.buttonGroup_guanpaibu.checkedButton() == self.radioButton_p4:
             guan_paibu = [5, 4]
         elif self.buttonGroup_guanpaibu.checkedButton() == self.radioButton_p5:
-            guan_paibu = [int(self.lineEdit_p5h.text()), int(self.lineEdit_p5s.text())]
+            guan_paibu = 'o'
 
         if self.buttonGroup_yinshua.checkedButton() == self.radioButton_y1:
             yinshua = '水墨印'
         elif self.buttonGroup_yinshua.checkedButton() == self.radioButton_y2:
             yinshua = '彩印'
         elif self.buttonGroup_yinshua.checkedButton() == self.radioButton_y3:
-            yinshua = self.lineEdit_y3.text()
+            yinshua = 'o'
 
         if self.buttonGroup_neika_geban.checkedButton() == self.radioButton_n1:
             neika_geban = 'neika'

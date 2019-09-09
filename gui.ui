@@ -622,7 +622,7 @@
        <property name="font">
         <font>
          <family>Agency FB</family>
-         <pointsize>18</pointsize>
+         <pointsize>14</pointsize>
          <weight>50</weight>
          <bold>false</bold>
         </font>
@@ -636,12 +636,12 @@
  <resources/>
  <connections/>
  <buttongroups>
+  <buttongroup name="buttonGroup_dianban"/>
+  <buttongroup name="buttonGroup_neika_geban"/>
+  <buttongroup name="buttonGroup_yinshua"/>
+  <buttongroup name="buttonGroup_guangaigao"/>
   <buttongroup name="buttonGroup_dsw"/>
   <buttongroup name="buttonGroup_d"/>
   <buttongroup name="buttonGroup_guanpaibu"/>
-  <buttongroup name="buttonGroup_dianban"/>
-  <buttongroup name="buttonGroup_yinshua"/>
-  <buttongroup name="buttonGroup_neika_geban"/>
-  <buttongroup name="buttonGroup_guangaigao"/>
  </buttongroups>
 </ui>

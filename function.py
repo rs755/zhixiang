@@ -15,7 +15,7 @@ def rounding(num):
 def calculator(guanzhijing, guanzonggao, dsw, guan_paibu, yinshua, neika_geban, dianban_c):
     bihou = houdu_dict['bihou' + dsw]  # 壁厚
     yaogai = houdu_dict['yaogai' + dsw]  # 摇盖厚
-    if yinshua != '水墨印' or yinshua != '彩印':
+    if yinshua != '水墨印' and yinshua != '彩印':
         caizhi = 'o'
     else:
         caizhi = dsw + yinshua
@@ -25,7 +25,7 @@ def calculator(guanzhijing, guanzonggao, dsw, guan_paibu, yinshua, neika_geban, 
     elif neika_geban == 'geban':
         neika_paibu = [0, 0]
         geban_c = guan_paibu[1]-1
-    elif neika_geban == 'no':
+    else:
         neika_paibu = [0, 0]
         geban_c = 0
     L = (guanzhijing + 1) * guan_paibu[0] + bihou + 3 + houdu_dict['neika_geban'] * neika_paibu[0]

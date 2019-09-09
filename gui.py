@@ -350,7 +350,7 @@ class Ui_MainWindow(object):
         self.plainTextEdit = QtWidgets.QPlainTextEdit(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("Agency FB")
-        font.setPointSize(18)
+        font.setPointSize(14)
         font.setBold(False)
         font.setWeight(50)
         self.plainTextEdit.setFont(font)
