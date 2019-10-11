@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>纸箱规格计算 v2.0</string>
+   <string>纸箱规格计算 v2.1</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="layoutWidget">
@@ -621,8 +621,8 @@
       <widget class="QPlainTextEdit" name="plainTextEdit">
        <property name="font">
         <font>
-         <family>Agency FB</family>
-         <pointsize>14</pointsize>
+         <family>微软雅黑</family>
+         <pointsize>12</pointsize>
          <weight>50</weight>
          <bold>false</bold>
         </font>
@@ -636,12 +636,12 @@
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroup_dianban"/>
   <buttongroup name="buttonGroup_neika_geban"/>
-  <buttongroup name="buttonGroup_yinshua"/>
+  <buttongroup name="buttonGroup_dianban"/>
+  <buttongroup name="buttonGroup_d"/>
   <buttongroup name="buttonGroup_guangaigao"/>
   <buttongroup name="buttonGroup_dsw"/>
-  <buttongroup name="buttonGroup_d"/>
+  <buttongroup name="buttonGroup_yinshua"/>
   <buttongroup name="buttonGroup_guanpaibu"/>
  </buttongroups>
 </ui>

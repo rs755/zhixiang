@@ -349,8 +349,8 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.pushButton)
         self.plainTextEdit = QtWidgets.QPlainTextEdit(self.layoutWidget)
         font = QtGui.QFont()
-        font.setFamily("Agency FB")
-        font.setPointSize(14)
+        font.setFamily("微软雅黑")
+        font.setPointSize(12)
         font.setBold(False)
         font.setWeight(50)
         self.plainTextEdit.setFont(font)
@@ -363,7 +363,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "纸箱规格计算 v2.0"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "纸箱规格计算 v2.1"))
         self.radioButton_d1.setText(_translate("MainWindow", "Ø65"))
         self.radioButton_d2.setText(_translate("MainWindow", "Ø60"))
         self.radioButton_d3.setText(_translate("MainWindow", "Ø52"))
