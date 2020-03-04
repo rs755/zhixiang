@@ -363,7 +363,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "纸箱规格计算 v2.1"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "纸箱规格计算 v2.2"))
         self.radioButton_d1.setText(_translate("MainWindow", "Ø65"))
         self.radioButton_d2.setText(_translate("MainWindow", "Ø60"))
         self.radioButton_d3.setText(_translate("MainWindow", "Ø52"))

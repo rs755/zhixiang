@@ -32,12 +32,12 @@ def calculator(guanzhijing, guanzonggao, dsw, guan_paibu, yinshua, neika_geban, 
     W = (guanzhijing + 1) * guan_paibu[1] + bihou + 3 + houdu_dict['neika_geban'] * (neika_paibu[1] + geban_c)
     H = guanzonggao + bihou + yaogai + houdu_dict['dianban'] * dianban_c
 
-    neibaozhuang = '"'
+    neibaozhuang = ''
     if neika_paibu[0]:
         neika_L = rounding(L - neika_geban_chicun[dsw])
         neika_W = rounding(W - neika_geban_chicun[dsw])
         neika_H = rounding(H - neika_geban_chicun[dsw])
-        neibaozhuang += '内卡：{}x{}x{}mm\n'.format(neika_L, neika_W, neika_H)
+        neibaozhuang += '内卡：{}x{}x{}mm'.format(neika_L, neika_W, neika_H)
     if geban_c:
         geban_L = rounding(L - neika_geban_chicun[dsw])
         geban_H = rounding(H - neika_geban_chicun[dsw])
@@ -46,5 +46,4 @@ def calculator(guanzhijing, guanzonggao, dsw, guan_paibu, yinshua, neika_geban, 
         dianban_L = rounding(L - neika_geban_chicun[dsw])
         dianban_W = rounding(W - neika_geban_chicun[dsw])
         neibaozhuang += '垫板：{}x{}mm'.format(dianban_L, dianban_W)
-    neibaozhuang += '"'
     return "{}\n{}*{}*{}mm\n{}\n{}".format(caizhi_dict[caizhi], L, W, H, yinshua, neibaozhuang)
